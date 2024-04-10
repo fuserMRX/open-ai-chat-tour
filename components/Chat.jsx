@@ -27,8 +27,6 @@ const Chat = () => {
         },
     });
 
-    console.log(messages);
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const query = { role: 'user', content: text };
