@@ -42,6 +42,8 @@ const NewTour = () => {
 
         const formData = new FormData(e.currentTarget);
         const destination = Object.fromEntries(formData.entries());
+        destination.city = destination.city.toLowerCase();
+        destination.country = destination.country.toLowerCase();
         mutate(destination);
     };
 

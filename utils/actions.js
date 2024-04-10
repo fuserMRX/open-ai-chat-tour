@@ -32,8 +32,8 @@ export const generateTourResponse = async ({ city, country }) => {
     Once you have a list, create a one-day tour. Response should be in the following JSON format: 
     {
     "tour": {
-        "city": "${city}",
-        "country": "${country}",
+        "city": "${city}", // city name should be in lowercase 
+        "country": "${country}", // country name should be in lowercase
         "title": "title of the tour",
         "description": "short description of the city and tour",
         "stops": ["short paragraph on the stop 1 ", "short paragraph on the stop 2","short paragraph on the stop 3"]
