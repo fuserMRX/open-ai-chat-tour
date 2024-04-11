@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
+import axios from 'axios';
+const url = `https://api.unsplash.com/search/photos?client_id=${process.env.UNSPLASH_API_KEY}&query=`;
 
 import TourInfo from '@/components/TourInfo';
 import { getSingleTour, generateTourImage } from '@/utils/actions';
@@ -12,10 +14,15 @@ const SingleTourPage = async ({ params }) => {
         redirect('/tours');
     }
 
-    const tourImage = await generateTourImage({
-        city: tour.city,
-        country: tour.country,
-    });
+    // Unsplash API
+    const { data } = await axios(`${url}${tour.city}`);
+    const tourImage = data?.results[0]?.urls?.raw;
+
+    // OpenAI API is disabled  - uncomment this code to enable it
+    // const tourImage = await generateTourImage({
+    //     city: tour.city,
+    //     country: tour.country,
+    // });
 
     return (
         <div>
