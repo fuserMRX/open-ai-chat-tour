@@ -17,6 +17,8 @@ export const generateChatResponse = async (chatMessages) => {
             ],
             model: "gpt-3.5-turbo",
             temperature: 0,
+            // limit the number of tokens for end user
+            max_tokens: 100,
         });
 
         return response.choices[0].message;
