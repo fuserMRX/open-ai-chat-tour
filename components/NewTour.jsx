@@ -28,6 +28,7 @@ const NewTour = () => {
             if (newTour) {
                 await createNewTour(newTour);
                 queryClient.invalidateQueries({ queryKey: ['tours'] });
+
                 return newTour;
             }
 
