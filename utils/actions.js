@@ -65,8 +65,6 @@ export const generateTourResponse = async ({ city, country }) => {
             return null;
         }
 
-        console.log('TOTAL TOKENS', response.usage.total_tokens);
-
         return {
             tour: tourData.tour,
             tokens: response.usage.total_tokens
