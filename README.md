@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js + OpenAI App
 
-## Getting Started
+## Functionality of the application
 
-First, run the development server:
+- This application will allow create/fetch new tours with the help of AI.
+- A user can communicate with AI in a chat - token limitation is added too in order to control available OpenAI API number of tokens
+- A user can login by using gmail or email and password separately.
+- User's info can be managed in a separate window.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Static Badge](https://img.shields.io/badge/build--1.0.0-nextjsOpenAIApp-brightgreen)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Additional features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+* **[Render](https://render.com/)** `platform` was used to instantiate `PostgreSQL` 🔥 that is used to save tour queries in order not to do the same requests to OpenAI API
+* **[Clerk](https://clerk.com/)** platform ✨ was used  to simplify  process of a user login via google and to beautify user interface for sign in and sign out
+* **[Unsplash](https://unsplash.com/)** was used to generate photo for a tour - cheaper solution to OpenAI API for images
+* **[Prisma](https://www.prisma.io/)** was used to simplify communication between app and `PostgreSQL`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Installation instructions
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **npm install**
+- **npm run dev** - start project locally
+- `node version` should not be more than **v18**
